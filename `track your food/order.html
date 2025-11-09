@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Track Your Food — Your Order</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container header-row">
+      <div class="left">
+        <div class="logo">TF</div>
+        <div class="brand-text"><div class="brand-title">Track Your Food</div></div>
+      </div>
+      <div class="right">
+        <button class="ghost" onclick="goTo('index.html')">Home</button>
+        <button class="btn" onclick="openCheckout()">Checkout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h3>Your Cart</h3>
+      <div id="cartList" class="cart-items"></div>
+      <div class="total-row">
+        <div>Total</div><div>₹ <span id="cartTotal">0</span></div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="btn" onclick="openCheckout()">Place Order</button>
+        <button class="secondary" onclick="clearCart()">Clear Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>© Track Your Food</footer>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', ()=>{ renderCart(); updateCartCount(); });</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Track Your Food — Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container header-row">
+      <div class="left">
+        <div class="logo">TF</div>
+        <div class="brand-text"><div class="brand-title">Track Your Food</div></div>
+      </div>
+      <div class="right">
+        <button class="ghost" onclick="goTo('index.html')">Home</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container center-col">
+    <div class="card auth-card">
+      <h2>Login</h2>
+      <p class="small">Enter your name to continue (demo — no password).</p>
+      <input id="nameInput" placeholder="Your name" />
+      <input id="phoneInput" placeholder="Phone (optional)" />
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button class="btn" onclick="doLogin()">Continue</button>
+        <button class="secondary" onclick="goTo('index.html')">Cancel</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>© Track Your Food</footer>
+  <script src="app.js"></script>
+</body>
+</html>

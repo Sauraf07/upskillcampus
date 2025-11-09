@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Track Your Food — Tracking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container header-row">
+      <div class="left">
+        <div class="logo">TF</div>
+        <div class="brand-text"><div class="brand-title">Track Your Food</div></div>
+      </div>
+      <div class="right">
+        <button class="ghost" onclick="goTo('index.html')">Home</button>
+        <button class="btn" onclick="goTo('order.html')">Cart</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container center-col">
+    <div class="card tracking-card">
+      <h3>Order Tracking</h3>
+      <p class="small">Enter tracking ID, or open last placed order for demo.</p>
+      <input id="tidInput" placeholder="Enter tracking ID (e.g., TF123456)" />
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="btn" onclick="viewTracking()">View</button>
+        <button class="secondary" onclick="loadLastOrder()">Last Order</button>
+      </div>
+
+      <div id="trackingPanel" style="margin-top:18px;display:none">
+        <div><b>Tracking ID:</b> <span id="showTid"></span></div>
+        <div style="margin-top:8px" id="statusText"></div>
+        <div class="steps" style="margin-top:12px">
+          <div class="step"><div class="dot" id="t1"></div><div class="small">Placed</div></div>
+          <div class="step"><div class="dot" id="t2"></div><div class="small">Preparing</div></div>
+          <div class="step"><div class="dot" id="t3"></div><div class="small">On the way</div></div>
+          <div class="step"><div class="dot" id="t4"></div><div class="small">Delivered</div></div>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button class="btn" onclick="simulateNextTrack()">Next</button>
+          <button class="secondary" onclick="resetTrack()">Reset</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>© Track Your Food</footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Track Your Food — Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container header-row">
+      <div class="left">
+        <div class="logo">TF</div>
+        <div class="brand-text"><div class="brand-title">Track Your Food</div><div class="brand-sub">Fast • Fresh • Trackable</div></div>
+      </div>
+      <div class="center">
+        <input id="global-search" placeholder="Search restaurant or dish (e.g., biryani, pizza)" />
+      </div>
+      <div class="right">
+        <div class="location">📍 India</div>
+        <button class="ghost" onclick="goTo('login.html')">Login</button>
+        <button class="btn" onclick="goTo('order.html')">Cart (<span id="cart-count">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="filters-row">
+      <div class="chips" id="chips">
+        <button class="chip active" onclick="filterCategory('All', this)">All</button>
+        <button class="chip" onclick="filterCategory('Pizza', this)">Pizza</button>
+        <button class="chip" onclick="filterCategory('Burgers', this)">Burgers</button>
+        <button class="chip" onclick="filterCategory('Indian', this)">Indian</button>
+        <button class="chip" onclick="filterCategory('Dessert', this)">Dessert</button>
+      </div>
+      <div class="sort">
+        <select id="sortSelect" onchange="applySort(this.value)">
+          <option value="recommended">Recommended</option>
+          <option value="time">Delivery time</option>
+          <option value="rating">Rating</option>
+          <option value="cost_asc">Cost Low → High</option>
+          <option value="cost_desc">Cost High → Low</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="restaurantGrid" class="restaurant-grid"></section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="logo small">TF</div>
+      <div>
+        <div class="brand-title">Track Your Food</div>
+        <div class="small">Fast • Fresh • Trackable</div>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="order.html">My Orders</a>
+      <a href="tracking.html">Track Order</a>
+      <a href="login.html">Login</a>
+    </div>
+
+    <div class="footer-contact">
+      <div class="small">Contact</div>
+      <div class="small">soraf7541046876@gmail.com</div>
+      <div class="small">+917856898920</div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:12px;text-align:center;">
+    <div class="small">© <span id="year"></span> Track Your Food • All rights reserved.</div>
+  </div>
+</footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', ()=>{ renderRestaurants(); updateCartCount(); });</script>
+</body>
+</html>

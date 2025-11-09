@@ -1,0 +1,57 @@
+:root{ --accent:#ff6b3d; --muted:#6b7280; --bg:#f7f8fb; --card:#ffffff; --radius:12px; --shadow: 0 6px 18px rgba(31,41,55,0.08); font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#111827;line-height:1.45}
+.container{max-width:1000px;margin:0 auto;padding:18px}
+header{background:#fff;border-bottom:1px solid rgba(0,0,0,0.04);position:sticky;top:0;z-index:20}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+.left{display:flex;align-items:center;gap:12px}
+.logo{width:44px;height:44px;background:var(--accent);border-radius:10px;display:grid;place-items:center;color:white;font-weight:800}
+.brand-title{font-size:16px}
+.brand-sub{font-size:12px;color:var(--muted)}
+.center{flex:1;margin:0 12px}
+.center input, #global-search{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e6e9ef}
+.right{display:flex;gap:8px;align-items:center}
+.btn{background:var(--accent);color:#fff;padding:10px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+.ghost{background:transparent;border:none;color:var(--muted);cursor:pointer}
+.secondary{background:transparent;color:var(--muted);padding:8px;border-radius:8px;border:1px solid #eaeaea;cursor:pointer}
+.filters-row{display:flex;justify-content:space-between;align-items:center;margin:14px 0}
+.chips{display:flex;gap:8px}
+.chip{padding:8px 10px;border-radius:999px;border:1px solid #eae9ef;background:#fff;cursor:pointer}
+.chip.active{background:var(--accent);color:#fff;border-color:transparent}
+.restaurant-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.restaurant-card{background:var(--card);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;cursor:pointer;transition:transform .12s}
+.restaurant-card:hover{transform:translateY(-6px)}
+.res-media{position:relative;height:140px;overflow:hidden}
+.res-media img{width:100%;height:100%;object-fit:cover}
+.offer-badge{position:absolute;left:10px;top:10px;background:#ffedd5;color:#b45309;padding:6px 8px;border-radius:8px;font-weight:700;font-size:12px}
+.res-body{padding:10px 12px}
+.res-title{margin:0;font-size:16px}
+.res-meta{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.res-sub{color:var(--muted);font-size:13px;margin-top:6px}
+.card{background:var(--card);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
+.center-col{display:flex;align-items:center;justify-content:center;min-height:60vh}
+.auth-card{width:340px;padding:18px;text-align:left}
+.auth-card input{width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #e6e9ef}
+.cart-items{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.cart-row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px;border-radius:8px;border:1px solid #f1f1f1}
+.total-row{display:flex;justify-content:space-between;margin-top:12px;font-weight:700}
+.small{font-size:13px;color:var(--muted)}
+.tracking-card{width:460px;padding:16px}
+.steps{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:12px}
+.step{flex:1;text-align:center}
+.dot{width:14px;height:14px;border-radius:7px;margin:0 auto 8px;background:#e6e9ef}
+.dot.active{background:var(--accent);box-shadow:0 6px 14px rgba(255,107,61,0.18)}
+footer{padding:20px;text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+@media (max-width:700px){ .restaurant-grid{grid-template-columns:repeat(1,1fr)} .center{order:3;width:100%} }
+.site-footer{background:#fff;border-top:1px solid #f1f1f1;padding:18px 0;margin-top:28px}
+.footer-grid{display:flex;gap:18px;align-items:center;justify-content:space-between}
+.footer-brand{display:flex;gap:10px;align-items:center}
+.logo.small{width:36px;height:36px;background:var(--accent);border-radius:8px;display:grid;place-items:center;color:#fff;font-weight:800}
+.footer-links{display:flex;gap:12px;align-items:center}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:14px}
+.footer-links a:hover{text-decoration:underline}
+.footer-contact{color:var(--muted);font-size:13px}
+@media (max-width:700px){
+  .footer-grid{flex-direction:column;align-items:flex-start;gap:10px}
+  .footer-links{flex-wrap:wrap}
+}
